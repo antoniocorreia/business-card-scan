@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "QzkS1lsABYULl86N5NfutllWaNn1DZN7ufZuXlx+eSA=",
+  "Source": "BusinessCardScan.API",
+  "BasePath": "_content/BusinessCardScan.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
