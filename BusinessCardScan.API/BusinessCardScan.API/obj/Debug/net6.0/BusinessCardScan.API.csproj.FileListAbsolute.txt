@@ -29,3 +29,5 @@ C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.API\Business
 C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.API\BusinessCardScan.API\bin\Debug\net6.0\Azure.Core.dll
 C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.API\BusinessCardScan.API\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.API\BusinessCardScan.API\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.API\BusinessCardScan.API\bin\Debug\net6.0\BusinessCardScan.Shared.dll
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.API\BusinessCardScan.API\bin\Debug\net6.0\BusinessCardScan.Shared.pdb

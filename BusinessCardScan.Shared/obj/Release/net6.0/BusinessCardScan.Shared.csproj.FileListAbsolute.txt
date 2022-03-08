@@ -1,0 +1,12 @@
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\bin\Release\net6.0\BusinessCardScan.Shared.deps.json
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\bin\Release\net6.0\BusinessCardScan.Shared.dll
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\bin\Release\net6.0\BusinessCardScan.Shared.pdb
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\BusinessCardScan.Shared.csproj.AssemblyReference.cache
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\BusinessCardScan.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\BusinessCardScan.Shared.AssemblyInfoInputs.cache
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\BusinessCardScan.Shared.AssemblyInfo.cs
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\BusinessCardScan.Shared.csproj.CoreCompileInputs.cache
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\BusinessCardScan.Shared.dll
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\refint\BusinessCardScan.Shared.dll
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\BusinessCardScan.Shared.pdb
+C:\Users\anton\Documents\GitHub\business-card-scan\BusinessCardScan.Shared\obj\Release\net6.0\ref\BusinessCardScan.Shared.dll

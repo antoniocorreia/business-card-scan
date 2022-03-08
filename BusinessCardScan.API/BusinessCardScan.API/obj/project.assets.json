@@ -170,6 +170,16 @@
         "runtime": {
           "lib/netcoreapp2.1/_._": {}
         }
+      },
+      "BusinessCardScan.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BusinessCardScan.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessCardScan.Shared.dll": {}
+        }
       }
     }
   },
@@ -534,11 +544,17 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "BusinessCardScan.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../BusinessCardScan.Shared/BusinessCardScan.Shared.csproj",
+      "msbuildProject": "../../BusinessCardScan.Shared/BusinessCardScan.Shared.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "Azure.AI.FormRecognizer >= 4.0.0-beta.3",
+      "BusinessCardScan.Shared >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
   },
@@ -573,7 +589,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\anton\\Documents\\GitHub\\business-card-scan\\BusinessCardScan.Shared\\BusinessCardScan.Shared.csproj": {
+              "projectPath": "C:\\Users\\anton\\Documents\\GitHub\\business-card-scan\\BusinessCardScan.Shared\\BusinessCardScan.Shared.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

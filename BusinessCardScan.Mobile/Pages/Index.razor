@@ -1,0 +1,134 @@
+﻿@page "/"
+
+
+<button class="btn btn-primary @(processing ? "disabled" : "")" @onclick="CaptureCard" style="width:100%">@(processing ? "Processing card..." : "Capture Business Card")</button>
+
+@if (!string.IsNullOrEmpty(resultImage))
+{
+    <div style="width:100%;text-align:center;padding:20px;">
+        <img src="data:image/png;base64,@resultImage" alt="business card" height="200" />
+    </div>
+
+}
+
+@if (businessCard != null)
+{
+    <div class="card">
+        <div class="card-body">
+            <b>First Name</b> <p>@businessCard.FirstName</p>
+            <b>Last Name</b> <p>@businessCard.LastName</p>
+            <b>Companies</b>
+            @foreach (var company in businessCard.CompanyNames ?? new List<string>())
+            {
+                <p>@company</p>
+            }
+            <b>Departments</b>
+            @foreach (var dpt in businessCard.Departments ?? new List<string>())
+            {
+                <p>@dpt</p>
+            }
+            <b>Job Titles</b>
+            @foreach (var jt in businessCard.JobTitles ?? new List<string>())
+            {
+                <p>@jt</p>
+            }
+            <b>Emails</b>
+            @foreach (var e in businessCard.Emails ?? new List<string>())
+            {
+                <p>@e</p>
+            }
+            <b>Websites</b>
+            @foreach (var w in businessCard.Websites ?? new List<string>())
+            {
+                <p>@w</p>
+            }
+            <b>Addresses</b>
+            @foreach (var a in businessCard.Addresses ?? new List<string>())
+            {
+                <p>@a</p>
+            }
+
+            <b>Mobile Phones</b>
+            @foreach (var mp in businessCard.MobilePhones ?? new List<string>())
+            {
+                <p>@mp</p>
+            }
+
+            <b>Faxes</b>
+            @foreach (var f in businessCard.Faxes ?? new List<string>())
+            {
+                <p>@f</p>
+            }
+            <b>Work Phones</b>
+            @foreach (var wp in businessCard.WorkPhones ?? new List<string>())
+            {
+                <p>@wp</p>
+            }
+            <b>Other Phones</b>
+            @foreach (var op in businessCard.OtherPhones ?? new List<string>())
+            {
+                <p>@op</p>
+            }
+        </div>
+    </div>
+    <button class="btn btn-primary" style="width:100%">Add Contact</button>
+}
+
+@inject HttpClient Http
+@using Plugin.Media
+@using Plugin.Media.Abstractions
+@using System.Text
+
+@code {
+    string resultImage;
+    bool processing = false;
+    BusinessCard businessCard = null;
+
+    public async void CaptureCard()
+    {
+
+        var file = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+            {
+                PhotoSize = PhotoSize.Small,
+            });
+
+        var stream = file.GetStream();
+
+        resultImage = Convert.ToBase64String(ReadFully(stream));
+        processing = true;
+        StateHasChanged();
+
+        CameraImage ci = new CameraImage() { Base64 = resultImage };
+        var content = new StringContent(JsonConvert.SerializeObject(ci), Encoding.UTF8, "application/json");
+
+        var response = await Http.PostAsync("processcard64", content);
+
+        response.EnsureSuccessStatusCode();
+
+        var responseText = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+        try
+        {
+            businessCard = JsonConvert.DeserializeObject<BusinessCard>(responseText);
+            processing = false;
+        }
+        catch (JsonException exception)
+        {
+            processing = false;
+            throw new Exception("Could not deserialize the response body string as business card.");
+        }
+
+        StateHasChanged();
+    }
+
+    public static byte[] ReadFully(Stream input)
+    {
+        using (MemoryStream ms = new MemoryStream())
+        {
+            input.CopyTo(ms);
+            return ms.ToArray();
+        }
+    }
+
+
+
+}
